@@ -6,7 +6,7 @@ import monthlySaleRoutes from "./routes/monthlySaleRoutes.js";
 dotenv.config();
 
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 // Middleware - Uma função que trata as informações recebidas
 app.use(express.json());
