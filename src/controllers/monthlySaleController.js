@@ -30,7 +30,8 @@ export const updateSale = async (req,res) =>{
 	try{
 		const updatedMonthlySale = await MonthlySale.findByIdAndUpdate(
 			req.params.id,
-			req.body
+			req.body,
+			{ new: true }
 		);
 		res.json(updatedMonthlySale);
 	} catch {
