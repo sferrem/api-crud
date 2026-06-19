@@ -7,7 +7,7 @@ export const createSale = async (req, res) => {
 		const newMonthlySale = await MonthlySale.create(req.body);
 		res.json(newMonthlySale);
 	} catch (error){
-		console.log("error");
+		console.error("Erro ao criar venda:", error);
 		res.send({ error: error });
 	}
 }
@@ -19,6 +19,7 @@ export const getSales =  async (req,res) =>{
 		const monthlySales = await MonthlySale.find();
 		res.json(monthlySales);
 	} catch (error) {
+		console.error("Erro ao criar venda:", error);
 		res.json({ error: error });
 	}
 }
@@ -33,6 +34,7 @@ export const updateSale = async (req,res) =>{
 		);
 		res.json(updatedMonthlySale);
 	} catch (error) {
+		console.error("Erro ao criar venda:", error);
 		res.json({ error: error });
 	}
 }
@@ -46,6 +48,7 @@ export const deleteSale = async (req,res) =>{
 		);
 		res.json(monthlySaleToDelete);
 	} catch (error) {
+		console.error("Erro ao criar venda:", error);
 		res.json({ error: error });
 	}
 }
