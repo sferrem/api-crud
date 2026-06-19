@@ -10,7 +10,6 @@ export const createSale = async (req, res) => {
 		console.log("error");
 		res.send({ error: error });
 	}
-
 }
 
 // READ
@@ -19,9 +18,8 @@ export const getSales =  async (req,res) =>{
 	try{
 		const monthlySales = await MonthlySale.find();
 		res.json(monthlySales);
-	} catch {
+	} catch (error) {
 		res.json({ error: error });
-
 	}
 }
 // UPDATE
@@ -34,7 +32,7 @@ export const updateSale = async (req,res) =>{
 			{ new: true }
 		);
 		res.json(updatedMonthlySale);
-	} catch {
+	} catch (error) {
 		res.json({ error: error });
 	}
 }
@@ -47,7 +45,7 @@ export const deleteSale = async (req,res) =>{
 			req.params.id,
 		);
 		res.json(monthlySaleToDelete);
-	} catch {
+	} catch (error) {
 		res.json({ error: error });
 	}
 }
