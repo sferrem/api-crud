@@ -26,3 +26,5 @@ const connectDB = async () => {
 connectDB();
 
 app.listen(PORT, () => console.log(`The server is running at port ${PORT}`))
+
+export default app;
